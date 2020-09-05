@@ -8,6 +8,5 @@
 
 - docker configuration
 
-- statically served files in `/static`
+- statically served files in `/public`
 
-  

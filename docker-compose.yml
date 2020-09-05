@@ -1,11 +1,10 @@
 version: '3.8'
 
 services:
-    static: # small webserver to serve static content
-        container_name: uuid.gg
-        image: pierrezemb/gostatic
-        volumes:
-            - ./static:/srv/http
-        ports:
-            - 80:8043
-        command: "-append-header `X-Clacks-Overhead:${X_CLACKS_OVERHEAD_HEADER}`"
+  site:
+    container_name: site
+    hostname: main
+    build: .
+    restart: always
+    ports:
+      - 80:3000
